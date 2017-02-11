@@ -10,7 +10,13 @@ import React from 'react';
 
 class App extends React.Component {
   render() {
-    return <h1>Hello Series</h1>
+    //return <h1>Hello World</h1> <b>Bold</b> //Incorrecto
+    return (
+      <div>
+        <h1>Hello World</h1>
+        <b>Bold</b>
+      </div>
+    )
   }
 }
 
