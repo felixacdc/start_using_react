@@ -1,5 +1,17 @@
 import React from 'react';
 
-const App = () => <h1>Hi</h1>
+// class App extends React.Component {
+//   render() {
+//     return React.createElement("h1", null, 'Hello Eggheads');
+//   }
+// }
 
-export default App
+// const App = () => <h1>Hello Stateless</h1>
+
+class App extends React.Component {
+  render() {
+    return <h1>Hello Series</h1>
+  }
+}
+
+export default App;
