@@ -1,100 +1,99 @@
 import React from 'react';
 
-// class App extends React.Component {
-//   render() {
-//     return React.createElement("h1", null, 'Hello Eggheads');
-//   }
-// }
+/* class App extends React.Component {
+  render() {
+    return React.createElement("h1", null, 'Hello Eggheads');
+  }
+}
 
-// const App = () => <h1>Hello Stateless</h1>
+const App = () => <h1>Hello Stateless</h1> -->
 
-// class App extends React.Component {
-//   render() {
-//     //return <h1>Hello World</h1> <b>Bold</b> //Incorrecto
-//     return (
-//       <div>
-//         <h1>Hello World</h1>
-//         <b>Bold</b>
-//       </div>
-//     )
-//   }
-// }
+<!-- class App extends React.Component {
+  render() {
+    //return <h1>Hello World</h1> <b>Bold</b> //Incorrecto
+    return (
+      <div>
+        <h1>Hello World</h1>
+        <b>Bold</b>
+      </div>
+    )
+  }
+} */
 
-// class App extends React.Component {
-//   render() {
-//     let txt = this.props.txt
-//     return <h1>{txt}</h1>;
-//   }
-// }
+/* class App extends React.Component {
+  render() {
+    let txt = this.props.txt
+    return <h1>{txt}</h1>;
+  }
+}
 
-// App.propTypes = {
-//   txt: React.PropTypes.string,
-//   cat: React.PropTypes.number.isRequired
-// }
+App.propTypes = {
+  txt: React.PropTypes.string,
+  cat: React.PropTypes.number.isRequired
+}
 
-// App.defaultProps = {
-//   txt: "This is the default txt"
-// }
+App.defaultProps = {
+  txt: "This is the default txt"
+} */
 
-// class App extends React.Component {
-//   constructor(){
-//     super();
-//     this.state = {
-//       txt: 'This is the state txt'
-//     }
-//   }
-//   update(e) {
-//     this.setState({txt: e.target.value})
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>{this.state.txt}</h1>
-//         <Widget update={this.update.bind(this)} />
-//         <Widget update={this.update.bind(this)} />
-//         <Widget update={this.update.bind(this)} />
-//       </div>
-//     )
-//   }
-// }
+/* class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      txt: 'This is the state txt'
+    }
+  }
+  update(e) {
+    this.setState({txt: e.target.value})
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.txt}</h1>
+        <Widget update={this.update.bind(this)} />
+        <Widget update={this.update.bind(this)} />
+        <Widget update={this.update.bind(this)} />
+      </div>
+    )
+  }
+}
 
-// const Widget = (props) => <input type="text" onChange={props.update} />
+const Widget = (props) => <input type="text" onChange={props.update} /> */
 
-// class App extends React.Component {
-//   render() {
-//     return <Button>I <Heart /> React</Button>;
-//   }
-// }
+/* class App extends React.Component {
+  render() {
+    return <Button>I <Heart /> React</Button>;
+  }
+}
 
-// const Button = (props) => <button>{props.children}</button>
+const Button = (props) => <button>{props.children}</button>
 
-// class Heart extends React.Component {
-//   render() {
-//     return <span>&hearts;</span>
-//   }
-// }
+class Heart extends React.Component {
+  render() {
+    return <span>&hearts;</span>
+  }
+} */
 
-////
-// class App extends React.Component {
-//   render() {
-//     return <Title text="The Text" />;
-//   }
-// }
+/* class App extends React.Component {
+  render() {
+    return <Title text="The Text" />;
+  }
+}
 
-// const Title = (props) => <h1>Title: {props.text}</h1>;
+const Title = (props) => <h1>Title: {props.text}</h1>;
 
-// Title.propTypes = {
-//     // text: React.PropTypes.string.isRequired
-//     text(props, propName, component) {
-//         if(!(propName in props))
-//             return new Error(`Missing ${propName}`)
+Title.propTypes = {
+    text: React.PropTypes.string.isRequired
+    text(props, propName, component) {
+        if(!(propName in props))
+            return new Error(`Missing ${propName}`)
 
-//         if(props[propName].length < 6)
-//             return new Error(`${propName} was too short`)
-//     }
-// }
-////
-class App extends React.Component {
+        if(props[propName].length < 6)
+            return new Error(`${propName} was too short`)
+    }
+}
+*/
+/* class App extends React.Component {
   constructor() {
     super();
     this.state = {curretEvent: '---'}
@@ -122,6 +121,36 @@ class App extends React.Component {
           <h1>{this.state.currentEvent}</h1>
         </div>
     )
+  }
+} */
+
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {a: ''}
+  }
+  update(e) {
+    this.setState({
+      a: this.refs.a.value,
+      b: this.refs.b.value
+    });
+  }
+  render() {
+    return (
+      <div>
+        <input
+          ref="a"
+          type="text"
+          onChange={this.update.bind(this)}
+        /> {this.state.a}
+        <hr />
+        <input 
+          ref="b"
+          type="text"
+          onChange={this.update.bind(this)}
+        /> {this.state.b}
+      </div>
+    );
   }
 }
 
