@@ -124,7 +124,7 @@ Title.propTypes = {
   }
 } */
 
-import ReactDOM from 'react-dom';
+/* import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor(){
@@ -159,6 +159,27 @@ class App extends React.Component {
 class Input extends React.Component {
   render() {
     return <div><input ref="input" type="text" onChange={this.props.update}/></div>
+  }
+}*/
+
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {val: 0}
+    this.update = this.update.bind(this)
+  }
+  update(){
+    this.setState({val: this.state.val +1})
+  }
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
+  render(){
+    console.log('render')
+    return <button onClick={this.update}>{this.state.val}</button>
+  }
+  componentDidMount() {
+    console.log('componentDidMount')
   }
 }
 
