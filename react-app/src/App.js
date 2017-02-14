@@ -206,7 +206,7 @@ class Wrapper extends React.Component {
   }
 }*/
 
-import ReactDOM from 'react-dom';
+/*import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor(){
@@ -252,6 +252,26 @@ class Wrapper extends React.Component {
       </div>
     )
   }
+}*/
+
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+  update() {
+    ReactDOM.render(
+      <App val={this.props.val+1}/>,
+      document.getElementById('root')
+    )
+  }
+  render() {
+    return (
+      <button onClick={this.update.bind(this)}>
+        {this.props.val}
+      </button>
+    )
+  }
 }
 
-export default Wrapper;
+App.defaultProps = {val: 0}
+
+export default App;
