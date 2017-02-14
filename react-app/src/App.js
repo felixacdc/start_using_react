@@ -254,7 +254,7 @@ class Wrapper extends React.Component {
   }
 }*/
 
-import ReactDOM from 'react-dom';
+/*import ReactDOM from 'react-dom';
 
 class App extends React.Component {
   constructor() {
@@ -287,6 +287,27 @@ class App extends React.Component {
   }
 }
 
-App.defaultProps = {val: 0}
+App.defaultProps = {val: 0}*/
+
+class App extends React.Component {
+  constructor() {
+    super();
+  
+    this.state = {items: []};
+  }
+  componentWillMount() {
+    fetch('http://swapi.co/api/people/?format=json')
+    .then( response => response.json() )
+    .then( ({results: items}) => this.setState({items}) )
+  }
+  render() {
+    let items = this.state.items;
+    return (
+      <div>
+        {items.map(item => <h4 key={item.name}>{item.name}</h4>)}
+      </div>
+    )
+  }
+}
 
 export default App;
