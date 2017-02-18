@@ -372,6 +372,8 @@ class Label extends React.Component {
 
 const LabelHOC = HOC(Label)*/
 
+import './App.css';
+
 class App extends React.Component {
   constructor() {
     super();
