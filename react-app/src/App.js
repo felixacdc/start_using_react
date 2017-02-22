@@ -372,14 +372,14 @@ class Label extends React.Component {
 
 const LabelHOC = HOC(Label)*/
 
-import './App.css';
+/*import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
   
     this.state = {
-      input: '/* add your jsx here */',
+      input: '// add your jsx here //',
       output: '',
       err: ''
     };
@@ -412,6 +412,25 @@ class App extends React.Component {
         </div>
       </div>
     )
+  }
+}*/
+
+class App extends React.Component {
+  render() {
+    return (
+      <Parent>
+        <div className="childA"></div>
+        <div className="childA"></div>
+      </Parent>
+    );
+  }
+}
+
+class Parent extends React.Component {
+  render() {
+    let items = this.props.children.map(child => child)
+    console.log(items)
+    return null
   }
 }
 
